@@ -1,0 +1,21 @@
+[core]
+	excludesfile = /Users/stebau/.gitignore
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[user]
+	name = Stephanie Bauer
+	email = stephanie.bauer@sinnerschrader.com
+[alias]
+   cleanup = !git branch --merged | grep -v '^* master$' | grep -v '^  master$' | xargs git branch -d
+   ls = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim white)%s%C(reset) %C(ul white) %an%C(reset)%C(bold yellow)%d%C(reset)'
+   la = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim white)%s%C(reset) %C(ul white) %an%C(reset)%C(yellow)%d%C(reset)' --all
+   gitlab = !git github
+   fastclone = !git clone --depth 1 --single-branch
+   sourcetree = !/usr/local/bin/sourcetree
+   github = !/usr/local/lib/github/github
+   issues = !issues
+   merge-requests = !/usr/local/lib/github/github . merge_requests
